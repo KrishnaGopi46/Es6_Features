@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ES6 feature</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+<script>
+
+	//....arguments.... 
+		
+	function sum(){
+		console.log(arguments);
+	}
+	sum(1,2,3)
+		
+	//.............rest............ 
+		
+	function newFun(...a){
+		console.log(a);
+	}	
+	newFun(1,2,3,4,5,6)
+	
+	//..............spreat...............
+	//using object
+	
+	var obj={
+		a:'krish',
+		b:22,
+	}
+
+	var obj1={...obj};
+		
+	obj1.a="gopi";	
+	console.log(obj);
+	console.log(obj1);
+		
+	//using array
+		
+	var arr=[0,1,2,3,4]
+	var arr1=[...arr]
+	arr1[0]=5;	
+		
+	console.log(arr);	
+	console.log(arr1);
+	
+	
+	//.................Normal function................ 
+		
+		function myFun(){
+			var k=5+5;
+			return k;
+		}
+		console.log(myFun());
+		
+		// Arrow function
+		
+		main=()=>console.log(20);
+		
+		main()
+		
+		//Arrow function with multiline
+		
+		
+		main1=()=>{
+			var g=10+15;
+			console.log(g);
+		}
+		main1()
+		
+		var obj={
+			name:"karthi",
+			normalFun: function (){
+				console.log(this.name);
+			},
+			arrowFun:()=>{
+				console.log(this.name);   //arrow  function ku own this kidaiyathu
+			}
+		}
+		obj.normalFun()
+		obj.arrowFun()
+		
+		
+		
+		var obj1={
+			normalFu(){
+				console.log(this .name);
+
+				var arrFun=()=>{
+					console.log(this);
+			}
+			arrFun();
+			},			
+		}
+		obj1.normalFu.call(obj);
+		
+		
+	//................default value to param..............
+	
+	function myFun(a,b=20){
+			var c=a+b;
+			console.log(a+b);
+			return c;
+		}
+		myFun(5)
+	
+	//..............destructuring............
+	
+		var key={
+			name:'Krish',
+			age:22,
+		}
+		const {name,age}=key;
+		
+		console.log(name,age);
+		
+	//using array
+		var arr=[0,1,2,3,4,5];
+		
+		const [a,b,c,d,e,f]=arr;
+		
+		console.log(a,b,c,d,e,f);
+	
+	//........template literals........
+	
+	var aa="gopi";
+	console.log(`krishna ${aa}`)
+	
+	
+</script>
+
+
+</body>
+</html>
